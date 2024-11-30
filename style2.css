@@ -179,10 +179,11 @@ body::after {
 
 @media (max-width: 768px) {
     /* Navbar Adjustments */
-    .navbar {
+     .navbar {
         position: absolute;
         top: 0;
         width: 100%;
+      
         padding: 10px;
         font-size: 1.8vh;
         z-index: 10;
@@ -218,6 +219,7 @@ body::after {
         border-image: linear-gradient(to right, transparent 0%, #FFD700 50%, transparent 100%);
         border-image-slice: 1;
     }
+
     /* Projects Section */
     .projects-section {
         
