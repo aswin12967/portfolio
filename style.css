@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: url('./font/DrukWide-Medium-Web.woff2') format('woff2'),
+         url('./font/DrukWide-Medium-Web.woff') format('woff');
+}
+
+body {
+    font-family: 'Druk', sans-serif;
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s forwards;
+    position: relative;
+  
+}
+
+
+#starCanvas {
+    position: absolute; /* Fix the stars in the background */
+   }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5vw;
+    position: absolute;
+    top: 20px;
+    animation: slideIn 1s forwards;
+    font-size: 2.5vh;
+}
+
+@keyframes slideIn {
+    0% { top: -100px; }
+    100% { top: 20px; }
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    transition: transform 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.square:hover{
+    transform: scale(1.1);
+    color: transparent;
+    -webkit-text-stroke: 1px aliceblue;
+    
+}
+/* Define the navbar style */
+.navbar .square {
+    position: relative; /* Needed for positioning the pseudo-element */
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+/* Active class styles */
+.navbar .square.active::after {
+    content: ''; /* Create an empty pseudo-element */
+    position: absolute;
+    bottom: -5px; /* Adjust distance from the text */
+    left: 0;
+    width: 100%; /* Full width of the navbar item */
+    border-bottom: 3px solid transparent;
+    border-left: 5px solid transparent; /* Creates the angled effect */
+    border-right: 5px solid transparent; /* Creates the angled effect */
+    border-image: linear-gradient(to right, transparent 0%, #FFD700 50%, transparent 100%);
+    border-image-slice: 1;
+}
+
+/* Reset styles when not active */
+.navbar .square:not(.active)::after {
+    content: none; /* No underline effect when not active */
+}
+
+/* Optional: On hover, underline effect */
+
+.number {
+    font-size: 1.5vh;
+    margin-right: 8px;
+}
+
+.name-container {
+    position: absolute;
+    animation: popUp 0.8s forwards;
+   margin-top: 10%;
+   text-align: center;
+   justify-content: center;
+   margin-bottom: 0%;
+    
+    
+}
+
+@keyframes popUp {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.name {
+    font-size: 7vh;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.name:hover {
+    transform: scale(1.05);
+    color: aliceblue;
+}
+
+.position {
+    font-size: 5vh;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.description {
+    font-size: 4vh;
+    margin-top: 15px;
+    font-family: 'Outfit', sans-serif;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.resume {
+    
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 8px;
+    margin-top: 20%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;    
+   
+    
+}
+
+.resume:hover {
+    transform: scale(1.10);
+}
+
+.download-container {
+    animation: popUp 0.8s forwards;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+      
+        padding: 10px;
+        font-size: 1.8vh;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Maintain space between items */
+    }
+
+    .navbar .menu-items {
+        display: flex; /* Navbar items always visible */
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar .square {
+        font-size: 14px;
+        padding: 8px 12px;
+        text-align: center;
+    }
+
+    .navbar .square.active::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        border-bottom: 3px solid transparent;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-image: linear-gradient(to right, transparent 0%, #FFD700 50%, transparent 100%);
+        border-image-slice: 1;
+    }
+
+    .name-container {
+        margin-top: 250px; /* Push the name section below the navbar */
+    }
+
+    .name {
+        font-size: 6vh;
+    }
+
+    .position {
+        font-size: 4vh;
+    }
+
+    .description {
+        font-size: 3.5vh;
+    }
+
+    .resume {
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 10%;
+    }
+
+    .projects-cards {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .project-card {
+        width: 100%;
+        padding: 20px;
+    }
+}

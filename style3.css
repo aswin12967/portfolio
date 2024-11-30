@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: url('./font/DrukWide-Medium-Web.woff2') format('woff2'),
+         url('./font/DrukWide-Medium-Web.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap') format('woff2');
+}
+
+body {
+    font-family: 'Druk', sans-serif;
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s forwards;
+    position: relative;
+}
+body::after {
+    content: '';
+    position: absolute;
+    top: 650px; /* Start at the top to overlay the content */
+    left: 0;
+    width: 100%;
+    height: 45%; /* Take up the full height to blend with content */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), black, #FFD700); /* Gradient flowing to bottom */
+    z-index: -1;
+}
+#starCanvas {
+    position: absolute;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5vw;
+    position: absolute;
+    top: 20px;
+    animation: slideIn 1s forwards;
+    font-size: 2.5vh;
+}
+
+@keyframes slideIn {
+    0% { top: -100px; }
+    100% { top: 20px; }
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    transition: transform 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.square:hover{
+    transform: scale(1.1);
+    color: transparent;
+    -webkit-text-stroke: 1px aliceblue;
+    
+}
+/* Define the navbar style */
+.navbar .square {
+    position: relative; /* Needed for positioning the pseudo-element */
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+/* Active class styles */
+.navbar .square.active::after {
+    content: ''; /* Create an empty pseudo-element */
+    position: absolute;
+    bottom: -5px; /* Adjust distance from the text */
+    left: 0;
+    width: 100%; /* Full width of the navbar item */
+    border-bottom: 3px solid transparent;
+    border-left: 5px solid transparent; /* Creates the angled effect */
+    border-right: 5px solid transparent; /* Creates the angled effect */
+    border-image: linear-gradient(to right, transparent 0%, #FFD700 50%, transparent 100%);
+    border-image-slice: 1;
+}
+
+/* Reset styles when not active */
+.navbar .square:not(.active)::after {
+    content: none; /* No underline effect when not active */
+}
+
+/* Education Section */
+.education-section {
+    width: 100%;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    background: transparent; /* No gradient background */
+    color: white;
+    font-family: 'Druk', sans-serif;
+    overflow: hidden;
+   
+}
+
+/* Title and Cards Gap */
+.education-section h2 {
+    font-size: 2em;
+    margin-bottom: 40px; /* Adds space between the title and cards */
+    font-family: 'Druk', sans-serif;
+    color: #FFD700; /* Highlighted title color */
+    text-transform: uppercase;
+}
+
+/* Education Cards */
+.education-cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.education-section {
+    width: 100%;
+    padding: 60px 20px;
+    padding-bottom: 50px;
+    text-align: center;
+    position: absolute;
+    background: transparent; /* Removed gradient background */
+    color: white;
+    font-family: 'Druk', sans-serif;
+    overflow: hidden;
+    
+} 
+
+
+/* Education Section */
+.education-section {
+    width: 100%;
+    padding: 60px 20px;
+    padding-bottom: 50px;
+    text-align: center;
+    position: absolute;
+    background: transparent; /* Removed gradient background */
+    color: white;
+    font-family: 'Druk', sans-serif;
+    overflow: hidden;
+}
+
+/* Heading Styling */
+.education-section h2 {
+    margin-bottom: 30px; /* Adjust space between heading and cards */
+    font-size: 1.5rem; /* Optional: Adjust heading size */
+    font-family: 'Druk', sans-serif;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Card Style Enhancements */
+.education-card {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(50, 50, 50, 0.8)); /* Gradient inside the card */
+    border-radius: 20px;
+    padding: 25px;
+    width: clamp(280px, 90%, 320px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    opacity: 0.95;
+}
+
+.education-card:hover {
+    transform: scale(1.07);
+    box-shadow: 0 16px 50px rgba(255, 255, 255, 0.4);
+    opacity: 1;
+}
+
+/* Card Title */
+.education-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #FFD700;
+}
+
+/* Card Content */
+.education-card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Year Styling */
+.year {
+    font-size: 1em;
+    font-style: italic;
+    color: #FFD700;
+}
+
+/* Subtle Hover Effect */
+.education-card .hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.education-card:hover .hover-effect {
+    opacity: 1;
+}
+
+/* Subtle Hover Effect for Links */
+.education-card a:hover {
+    text-decoration: underline;
+    color: #FFD700;
+}
+@media (max-width: 768px) {
+    /* Navbar Adjustments */
+    .navbar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 10px;
+        font-size: 1.8vh;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Maintain space between items */
+    }
+
+    .navbar .menu-items {
+        display: flex; /* Navbar items always visible */
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar .square {
+        font-size: 14px;
+        padding: 8px 12px;
+        text-align: center;
+    }
+
+    .navbar .square.active::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        border-bottom: 3px solid transparent;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-image: linear-gradient(to right, transparent 0%, #FFD700 50%, transparent 100%);
+        border-image-slice: 1;
+    }
+
+    /* Education Section Adjustments */
+    .education-section {
+        margin-top: 520px;
+        padding: 40px 15px;
+        text-align: center;
+    }
+
+    .education-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+    }
+
+    /* Education Cards Layout - Stacked on smaller screens */
+    .education-cards {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    /* Education Card Adjustments */
+    .education-card {
+        width: 90%; /* Adjusting card width */
+        margin: 0 auto;
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+    .education-card h3 {
+        font-size: 1.5rem; /* Adjusted card title size */
+    }
+
+    /* Year Styling */
+    .year {
+        font-size: 0.9em;
+    }
+
+    /* Card Hover Effect */
+    .education-card:hover {
+        transform: scale(1.05);
+    }
+}

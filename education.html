@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style3.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="starCanvas"></canvas>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="square" data-href="index.html" onclick="window.location.href='./index.html';"><span class="number">01</span>// Home</div>
+        <div class="square" data-href="expertise.html" onclick="window.location.href='./expertise.html';"><span class="number">02</span>// Expertise</div>
+        <div class="square" data-href="work.html" onclick="window.location.href='./work.html';"><span class="number">03</span>// Work</div>
+        <div class="square" data-href="education.html" onclick="window.location.href='./education.html';"><span class="number">04</span>// Education</div>
+        <div class="square" data-href="contactme.html" onclick="window.location.href='./contactme.html';"><span class="number">05</span>// Contact Me</div>
+    </div>
+
+    <!-- Education Section -->
+    <div class="education-section">
+        <h2> Education</h2>
+        <div class="education-cards">
+            <!-- B.Sc. Card -->
+            <div class="education-card" id="bsc-card">
+                <h3>B.Sc. Information Technology</h3>
+                <p>76% - Sri Krishna Arts and Science College</p>
+                <p class="year">2021–2024</p>
+            </div>
+
+            <!-- HSC Card -->
+            <div class="education-card" id="hsc-card">
+                <h3>Higher Secondary Certificate (HSC)</h3>
+                <p>66% - Senthil Matric Higher Sec School</p>
+                <p class="year">2019–2020</p>
+            </div>
+
+            <!-- SSLC Card -->
+            <div class="education-card" id="sslc-card">
+                <h3>Secondary School Leaving Certificate (SSLC)</h3>
+                <p>94% - Senthil Matric Higher Sec School</p>
+                <p class="year">2017–2018</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

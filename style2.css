@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: url('./font/DrukWide-Medium-Web.woff2') format('woff2'),
+         url('./font/DrukWide-Medium-Web.woff') format('woff');
+}
+
+body {
+    font-family: 'Druk', sans-serif;
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s forwards;
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0%; /* Start at the top to overlay the content */
+    left: 0;
+    width: 100%;
+    height: 220%; /* Take up the full height to blend with content */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), black, #FFD700); /* Gradient flowing to bottom */
+    z-index: -1;
+}
+
+#starCanvas {
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it's behind the content */
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5vw;
+    position: absolute;
+    top: 20px;
+    animation: slideIn 1s forwards;
+    font-size: 2.5vh;
+    z-index: 10;
+}
+
+@keyframes slideIn {
+    0% { top: -100px; }
+    100% { top: 20px; }
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    transition: transform 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.square:hover {
+    transform: scale(1.1);
+    color: transparent;
+    -webkit-text-stroke: 1px aliceblue;
+}
+
+.navbar .square {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+.navbar .square.active::after {
+    content: ''; 
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    border-bottom: 3px solid transparent;
+    border-left: 5px solid transparent; 
+    border-right: 5px solid transparent; 
+    border-image: linear-gradient(to right, transparent 0%, #FFD700 50%, transparent 100%);
+    border-image-slice: 1;
+}
+
+.navbar .square:not(.active)::after {
+    content: none; 
+}
+
+.number {
+    font-size: 1.5vh;
+    margin-right: 8px;
+}
+
+/* Projects Section */
+.projects-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Druk', sans-serif;
+    position: absolute; 
+    top: 100px; /* Position it below the navbar */
+    background: transparent; 
+}
+
+/* Adjusted font size for My Projects heading */
+.projects-section h2 {
+    font-size: 1.6rem; /* Reduced size */
+    margin-bottom: 40px;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Projects Cards Container - Row-based Layout */
+.projects-cards {
+    display: flex;
+    flex-wrap: wrap;  /* Allow wrapping to new lines */
+    justify-content: space-around;  /* Space cards evenly */
+    gap: 40px; /* Space between cards */
+    width: 100%;
+    margin-top: 50px; /* Adjusted margin */
+}
+
+/* Project Card */
+.project-card {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, rgba(50, 50, 50, 0.9), rgba(80, 80, 80, 0.8));
+    border-radius: 20px;
+    padding: 25px;
+    width: 600px; /* Increased width of the card */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+}
+
+/* Hover Effect */
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 16px 50px rgba(255, 255, 255, 0.4);
+}
+
+/* Card Title */
+.project-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #FFD700;
+}
+
+/* Highlights in Text */
+.project-card .highlight {
+    color: #FFD700;
+    font-weight: bold;
+}
+/* Media Query for Screens Smaller Than 768px */
+
+
+@media (max-width: 768px) {
+    /* Navbar Adjustments */
+    .navbar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 10px;
+        font-size: 1.8vh;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Maintain space between items */
+    }
+
+    .navbar .menu-items {
+        display: flex; /* Navbar items always visible */
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar .square {
+        font-size: 14px;
+        padding: 8px 12px;
+        text-align: center;
+    }
+
+    .navbar .square.active::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        border-bottom: 3px solid transparent;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-image: linear-gradient(to right, transparent 0%, #FFD700 50%, transparent 100%);
+        border-image-slice: 1;
+    }
+    /* Projects Section */
+    .projects-section {
+        
+        margin-top: 200px;
+        padding: 40px 15px;
+        text-align: center;
+       
+    }
+
+    /* Adjusting the width of the project card container */
+    .projects-cards {
+        flex-direction: column; /* Stacked cards */
+        gap: 30px; /* Reduced gap between cards */
+        justify-content: center;
+    }
+
+    /* Project Card Adjustments */
+    .project-card {
+        width: 90%; /* Adjusting card width */
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 1.4rem; /* Adjusted card title size */
+    }
+}

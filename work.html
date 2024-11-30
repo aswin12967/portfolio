@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        
+      </style>
+      
+</head>
+<body>
+    <canvas id="starCanvas"></canvas>
+<!-- Navbar -->
+<div class="navbar">
+    <div class="square" data-href="index.html" onclick="window.location.href='./index.html';"><span class="number">01</span>// Home</div>
+    <div class="square" data-href="expertise.html" onclick="window.location.href='./expertise.html';"><span class="number">02</span>// Expertise</div>
+    <div class="square" data-href="work.html" onclick="window.location.href='./work.html';"><span class="number">03</span>// Work</div>
+    <div class="square" data-href="education.html" onclick="window.location.href='./education.html';"><span class="number">04</span>// Education</div>
+    <div class="square" data-href="contactme.html" onclick="window.location.href='./contactme.html';"><span class="number">05</span>// Contact Me</div>
+</div>
+
+
+<section class="projects-section">
+    <h2>My Projects</h2>
+    <div class="projects-cards">
+        <!-- Project 1: Personal Portfolio Website -->
+        <div class="project-card">
+            <h3>Personal Portfolio Website</h3>
+            <p>
+                <strong>Project Description:</strong><br>
+                Designed and developed a fully responsive portfolio website from scratch. This site showcases my technical skills and serves as a personal brand.<br><br>
+                
+                <strong>Key Features:</strong><br>
+                - Designed and developed a fully responsive portfolio website from scratch.<br>
+                - Implemented core features using <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, and <span class="highlight">JavaScript</span>.<br>
+                - Enhanced user interactivity with smooth animations and dynamic transitions.<br>
+                - Integrated <span class="highlight">EmailJS</span> to create a functional contact form for seamless communication.<br>
+                - Showcased creativity and technical expertise in web development.<br>
+                - This very website serves as a testament to my skills and dedication to creating visually appealing and functional designs.
+            </p>
+            <p>
+                <strong>Languages and Tools Used:</strong><br>
+                - <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, <span class="highlight">JavaScript</span>, <span class="highlight">EmailJS</span>.
+            </p>
+        </div>
+
+        <!-- Project 2: OrangeHRM Selenium Automation -->
+        <div class="project-card">
+            <h3>OrangeHRM Selenium Automation</h3>
+            <p>
+                <strong>Project Description:</strong><br>
+                This project automates the testing of the OrangeHRM Demo website using Selenium WebDriver and Java. It follows best practices like the Page Object Model (POM) and Singleton pattern, and it generates detailed reports using Allure.<br><br>
+                
+                <strong>Key Features:</strong><br>
+                - Login automation for admin and user roles.<br>
+                - Create and manage employee records, including updating and verifying user IDs.<br>
+                - Role-based updates to personal and contact details.<br>
+                - Generate JSON and HTML reports for test results.<br>
+            </p>
+            <p>
+                <strong>Languages and Tools Used:</strong><br>
+                - <span class="highlight">Java</span>, <span class="highlight">Selenium</span>, <span class="highlight">Cucumber</span>, <span class="highlight">Maven</span>.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+      <!-- Link to your separate JavaScript file -->
+      <script src="./script.js"></script>
+</body>
+</html>

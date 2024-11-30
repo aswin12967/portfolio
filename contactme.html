@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style4.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        
+      </style>
+      
+</head>
+<body>
+    <canvas id="starCanvas"></canvas>
+<!-- Navbar -->
+<div class="navbar">
+    <div class="square" data-href="index.html" onclick="window.location.href='./index.html';"><span class="number">01</span>// Home</div>
+    <div class="square" data-href="expertise.html" onclick="window.location.href='./expertise.html';"><span class="number">02</span>// Expertise</div>
+    <div class="square" data-href="work.html" onclick="window.location.href='./work.html';"><span class="number">03</span>// Work</div>
+    <div class="square" data-href="education.html" onclick="window.location.href='./education.html';"><span class="number">04</span>// Education</div>
+    <div class="square" data-href="contactme.html" onclick="window.location.href='./contactme.html';"><span class="number">05</span>// Contact Me</div>
+</div>
+<section class="contact-section">
+    <h2>Contact Me</h2>
+    <p>If you’d like to get in touch, feel free to use the form below or reach out via the links provided!</p>
+
+    <!-- Contact Links -->
+    <div class="contact-links">
+        <p>Email: <a href="mailto:aswin121202@gmail.com">aswin121202@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/aswinbalaji12/" target="_blank">linkedin.com/in/aswinbalaji12/</a></p>
+        <p>Instagram: <a href="https://instagram.com/asw12n_" target="_blank">@asw12n_</a></p>
+    </div>
+
+    <!-- Contact Form -->
+    <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+      <!-- Link to your separate JavaScript file -->
+      <script src="./script.js"></script>
+</body>
+</html>

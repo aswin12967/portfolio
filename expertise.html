@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="starCanvas"></canvas>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="square" data-href="index.html" onclick="window.location.href='./index.html';"><span class="number">01</span>// Home</div>
+        <div class="square" data-href="expertise.html" onclick="window.location.href='./expertise.html';"><span class="number">02</span>// Expertise</div>
+        <div class="square" data-href="work.html" onclick="window.location.href='./work.html';"><span class="number">03</span>// Work</div>
+        <div class="square" data-href="education.html" onclick="window.location.href='./education.html';"><span class="number">04</span>// Education</div>
+        <div class="square" data-href="contactme.html" onclick="window.location.href='./contactme.html';"><span class="number">05</span>// Contact Me</div>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards-container">
+        <a href="#">
+            <div class="card">
+                <div class="wrapper">
+                    <img src="./images/htmnlcssjsBackground.png" class="cover-image" />
+                </div>
+               
+                <img src="./images/htmlcssjs.png" class="character" />
+            </div>
+        </a>
+        <a href="#">
+            <div class="card">
+                <div class="wrapper">
+                    <img src="./images/JavaBackground.png" class="cover-image" />
+                </div>
+               
+                <img src="./images/Java.png" class="character" />
+            </div>
+        </a>
+        <a href="#">
+            <div class="card">
+                <div class="wrapper">
+                    <img src="./images/MysqlBackground.png"class="cover-image" />
+                </div>
+               
+                <img src="./images/Mysql.png" class="character" />
+            </div>
+        </a>
+        <a href="#">
+            <div class="card">
+                <div class="wrapper">
+                    <img src="./images/SeleniumBackground.png" class="cover-image" />
+                </div>
+               
+                <img src="./images/Selenium.png" class="character" />
+            </div>
+        </a>
+
+
+       
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="./script.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "NLF34XR2lgl9pDHpq",
+      });
+   })();
+</script>
+</body>
+</html>
