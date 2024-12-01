@@ -318,26 +318,25 @@ body::after {
 
    
     .cards-container {
-        flex-direction: column; 
-        gap: 50px;
-        width: 100%; 
-        height: auto; 
-        padding: 20px;
-        position: absolute;
-        margin-top: 1000px;
+        flex-direction: column;
+        gap: 20px;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        height: 100vh;
+        padding: 10px;
     }
 
     .card {
-        width: calc(var(--card-width) * 0.75); 
-        height: calc(var(--card-height) * 0.75); 
-        padding: 15px;
-        border-radius: 5px;
-        transition: all 0.5s ease-in-out; 
+        scroll-snap-align: start;
+        width: calc(var(--card-width) * 0.9);
+        height: calc(var(--card-height) * 0.9);
+        margin: 10px auto;
+        border-radius: 10px;
     }
 
     .card:hover {
-        box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
-        transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+        transform: none;
+        box-shadow: none;
     }
 
     .wrapper {
