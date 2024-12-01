@@ -29,24 +29,24 @@ body {
 body::after {
     content: '';
     position: absolute;
-    top: 650px; /* Start at the top to overlay the content */
+    top: 650px; 
     left: 0;
     width: 100%;
-    height: 45%; /* Take up the full height to blend with content */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), black, #FFD700); /* Gradient flowing to bottom */
+    height: 45%; 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), black, #FFD700); 
     z-index: -1;
 }
 #starCanvas {
     position: absolute;
 }
 
-/* Fade-in animation */
+
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
-/* Navbar */
+
 .navbar {
     width: 100%;
     display: flex;
@@ -77,9 +77,9 @@ body::after {
     -webkit-text-stroke: 1px aliceblue;
     
 }
-/* Define the navbar style */
+
 .navbar .square {
-    position: relative; /* Needed for positioning the pseudo-element */
+    position: relative; 
     display: inline-block;
     padding: 10px;
     cursor: pointer;
@@ -89,48 +89,48 @@ body::after {
     letter-spacing: 3px;
 }
 
-/* Active class styles */
+
 .navbar .square.active::after {
-    content: ''; /* Create an empty pseudo-element */
+    content: ''; 
     position: absolute;
-    bottom: -5px; /* Adjust distance from the text */
+    bottom: -5px; 
     left: 0;
-    width: 100%; /* Full width of the navbar item */
+    width: 100%; 
     border-bottom: 3px solid transparent;
-    border-left: 5px solid transparent; /* Creates the angled effect */
-    border-right: 5px solid transparent; /* Creates the angled effect */
+    border-left: 5px solid transparent; 
+    border-right: 5px solid transparent; 
     border-image: linear-gradient(to right, transparent 0%, #FFD700 50%, transparent 100%);
     border-image-slice: 1;
 }
 
-/* Reset styles when not active */
+
 .navbar .square:not(.active)::after {
-    content: none; /* No underline effect when not active */
+    content: none; 
 }
 
-/* Education Section */
+
 .education-section {
     width: 100%;
     padding: 60px 20px;
     text-align: center;
     position: relative;
-    background: transparent; /* No gradient background */
+    background: transparent;
     color: white;
     font-family: 'Druk', sans-serif;
     overflow: hidden;
    
 }
 
-/* Title and Cards Gap */
+
 .education-section h2 {
     font-size: 2em;
-    margin-bottom: 40px; /* Adds space between the title and cards */
+    margin-bottom: 40px; 
     font-family: 'Druk', sans-serif;
-    color: #FFD700; /* Highlighted title color */
+    color: #FFD700;
     text-transform: uppercase;
 }
 
-/* Education Cards */
+
 .education-cards {
     display: flex;
     justify-content: center;
@@ -149,7 +149,7 @@ body::after {
     padding-bottom: 50px;
     text-align: center;
     position: absolute;
-    background: transparent; /* Removed gradient background */
+    background: transparent; 
     color: white;
     font-family: 'Druk', sans-serif;
     overflow: hidden;
@@ -157,32 +157,32 @@ body::after {
 } 
 
 
-/* Education Section */
+
 .education-section {
     width: 100%;
     padding: 60px 20px;
     padding-bottom: 50px;
     text-align: center;
     position: absolute;
-    background: transparent; /* Removed gradient background */
+    background: transparent; 
     color: white;
     font-family: 'Druk', sans-serif;
     overflow: hidden;
 }
 
-/* Heading Styling */
+
 .education-section h2 {
-    margin-bottom: 30px; /* Adjust space between heading and cards */
-    font-size: 1.5rem; /* Optional: Adjust heading size */
+    margin-bottom: 30px;
+    font-size: 1.5rem; 
     font-family: 'Druk', sans-serif;
     color: white;
     text-transform: uppercase;
 }
 
-/* Card Style Enhancements */
+
 .education-card {
     font-family: 'Outfit', sans-serif;
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(50, 50, 50, 0.8)); /* Gradient inside the card */
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(50, 50, 50, 0.8)); 
     border-radius: 20px;
     padding: 25px;
     width: clamp(280px, 90%, 320px);
@@ -200,7 +200,7 @@ body::after {
     opacity: 1;
 }
 
-/* Card Title */
+
 .education-card h3 {
     font-size: 1.8em;
     margin-bottom: 15px;
@@ -210,20 +210,20 @@ body::after {
     color: #FFD700;
 }
 
-/* Card Content */
+
 .education-card p {
     font-size: 1.1em;
     line-height: 1.6;
 }
 
-/* Year Styling */
+
 .year {
     font-size: 1em;
     font-style: italic;
     color: #FFD700;
 }
 
-/* Subtle Hover Effect */
+
 .education-card .hover-effect {
     position: absolute;
     top: 0;
@@ -240,13 +240,13 @@ body::after {
     opacity: 1;
 }
 
-/* Subtle Hover Effect for Links */
+
 .education-card a:hover {
     text-decoration: underline;
     color: #FFD700;
 }
 @media (max-width: 768px) {
-    /* Navbar Adjustments */
+
     .navbar {
         position: absolute;
         top: 0;
@@ -257,11 +257,11 @@ body::after {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px; /* Maintain space between items */
+        gap: 15px; 
     }
 
     .navbar .menu-items {
-        display: flex; /* Navbar items always visible */
+        display: flex; 
         flex-direction: column;
         align-items: center;
         gap: 10px;
@@ -287,7 +287,7 @@ body::after {
         border-image-slice: 1;
     }
 
-    /* Education Section Adjustments */
+    
     .education-section {
         margin-top: 520px;
         padding: 40px 15px;
@@ -299,31 +299,30 @@ body::after {
         margin-bottom: 30px;
     }
 
-    /* Education Cards Layout - Stacked on smaller screens */
+    
     .education-cards {
         flex-direction: column;
         gap: 20px;
         justify-content: center;
     }
 
-    /* Education Card Adjustments */
+   
     .education-card {
-        width: 90%; /* Adjusting card width */
+        width: 90%;
         margin: 0 auto;
         padding: 20px;
         font-size: 1rem;
     }
 
     .education-card h3 {
-        font-size: 1.5rem; /* Adjusted card title size */
+        font-size: 1.5rem; 
     }
 
-    /* Year Styling */
+    
     .year {
         font-size: 0.9em;
     }
 
-    /* Card Hover Effect */
     .education-card:hover {
         transform: scale(1.05);
     }
