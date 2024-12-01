@@ -318,6 +318,7 @@ body::after {
 
    
     .cards-container {
+        margin-top: 750px;
         flex-direction: column;
         gap: 20px;
         overflow-y: scroll;
