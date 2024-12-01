@@ -1,52 +1,50 @@
-// Inicjalizacja sceny, kamery i renderera
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
 
-// Ustawienia renderera
+
 renderer.setSize(window.innerWidth, window.innerHeight);  
 document.body.appendChild(renderer.domElement);
 
-// Tworzenie geometrii gwiazd
+
 const starGeometry = new THREE.BufferGeometry();
 const starCount = 10000;
 const starPositions = new Float32Array(starCount * 3);
 
-// Losowe pozycje gwiazd
+
 for (let i = 0; i < starCount * 3; i++) {
-    starPositions[i] = (Math.random() - 0.5) * 2000; // rozstawienie gwiazd
+    starPositions[i] = (Math.random() - 0.5) * 2000;
 }
 
 starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
 
-// Materiał gwiazd
+
 const starMaterial = new THREE.PointsMaterial({
     color: 0xffffff,
     size: 0.5, // rozmiar gwiazd
     transparent: true
 });
 
-// Tworzenie punktów gwiazd
 const stars = new THREE.Points(starGeometry, starMaterial);
 scene.add(stars);
 
-// Ustawienie pozycji kamery
+
 camera.position.z = 800;
 
-// Animacja
+
 function animateStars() {
     requestAnimationFrame(animateStars);
 
-    // Ruch gwiazd
-    stars.rotation.y += 0.0005; // obracanie gwiazd w lewo/prawo
-    stars.rotation.x += 0.0002; // lekkie przesunięcie w dół
+    stars.rotation.y += 0.0005; 
+    stars.rotation.x += 0.0002; 
 
-    // Aktualizacja pozycji gwiazd (dla ruchu w stronę użytkownika)
+   
     const positions = stars.geometry.attributes.position.array;
     for (let i = 0; i < positions.length; i += 3) {
-        positions[i + 1] -= 0.05; // ruch gwiazd w dół
+        positions[i + 1] -= 0.05; 
 
-        // Jeśli gwiazda wychodzi poza ekran, resetuj jej pozycję
+      
         if (positions[i + 1] < -1000) {
             positions[i + 1] = 1000;
         }
@@ -56,7 +54,7 @@ function animateStars() {
     renderer.render(scene, camera);
 }
 
-// Dopasowanie do zmiany rozmiaru okna
+
 window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -66,38 +64,36 @@ window.addEventListener('resize', () => {
 animateStars();
 
 window.addEventListener('DOMContentLoaded', function () {
-    // Get the current page path
+   
     const currentPath = window.location.pathname;
 
-    // Log the current path for debugging
+
     console.log('Current path:', currentPath);
 
-    // Identify the nav items
     const navItems = document.querySelectorAll('.navbar .square');
 
-    // Loop through nav items and add the 'active' class to the correct one
     navItems.forEach(function (item) {
-        // Get the data-href attribute of each item
+        
         const itemHref = item.getAttribute('data-href');
 
-        // Compare the current path with the item's data-href
+        
         if (currentPath.includes(itemHref)) {
-            item.classList.add('active');  // Add the 'active' class if paths match
+            item.classList.add('active');  
         } else {
-            item.classList.remove('active');  // Remove the 'active' class otherwise
+            item.classList.remove('active'); 
         }
     });
 });
 
 
 document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent the default form submission
+    e.preventDefault(); 
 
     const name = this.name.value.trim();
     const email = this.email.value.trim();
     const message = this.message.value.trim();
 
-    // Validate the inputs
+   
     if (!name || !email || !message) {
         alert("Please fill out all fields.");
         return;
@@ -107,10 +103,8 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
 
-    // Initialize EmailJS
-    emailjs.init('NLF34XR2lgl9pDHpq'); // Replace with your EmailJS User ID
+    emailjs.init('NLF34XR2lgl9pDHpq'); 
 
-    // Send the form data
     emailjs
         .sendForm('service_8ognh17', 'template_1vt0p65', this)
         .then(
@@ -118,7 +112,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
                 alert("Message sent successfully!");
                 submitButton.textContent = 'Send Message';
                 submitButton.disabled = false;
-                document.getElementById("contact-form").reset(); // Clear the form
+                document.getElementById("contact-form").reset(); 
             },
             function (error) {
                 alert("Failed to send message. Please try again later.");
